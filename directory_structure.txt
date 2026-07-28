@@ -1,0 +1,32 @@
+Directory: C:\Users\Mohammad\Downloads\portfolio (1)\portfolio 
+ 
+Folder PATH listing
+Volume serial number is 000001B9 82C0:8A0F
+C:\USERS\MOHAMMAD\DOWNLOADS\PORTFOLIO (1)\PORTFOLIO
+|   directory_structure.txt
+|   index.html
+|   README.md
+|   scan_structure.bat
+|   
++---css
+|       style.css
+|       
++---images
+|       profile.jpg
+|       
++---js
+|       contact.js
+|       language.js
+|       translations.js
+|       
+\---Projects
+    +---projectOne
+    |       projectOne1.png
+    |       projectOne2.png
+    |       projectOne3.png
+    |       projectOne4.png
+    |       projectOne5.png
+    |       projectOne6.png
+    |       projectOne7.png
+    |       
+    \---projectTwo

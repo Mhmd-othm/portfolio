@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammad Othman – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">
+        <img src="images/logo.png" alt="Mohammad Othman" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-key="nav.about">Om mig</a></li>
+        <li><a href="#education" data-key="nav.education">Utbildning</a></li>
+        <li><a href="#experience" data-key="nav.experience">Erfarenhet</a></li>
+        <li><a href="#projects" data-key="nav.projects">Projekt</a></li>
+        <li><a href="#courses" data-key="nav.courses">Kurser</a></li>
+        <li><a href="#contact" data-key="nav.contact">Kontakt</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="lang-toggle" class="lang-btn" aria-label="Switch language">EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Öppna meny">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow" data-key="hero.eyebrow">Civilingenjör · Spelteknik</p>
+        <h1 class="hero-name">Mohammad<br><span>Othman</span></h1>
+        <p class="hero-tagline" data-key="hero.tagline">Jag bygger saker — från 3D-renderare till karriärer. Alltid redo för nästa utmaning.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary" data-key="hero.cta1">Se mina projekt</a>
+          <a href="#contact" class="btn-outline" data-key="hero.cta2">Kontakta mig</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-ring">
+          <div class="avatar-img">
+            <img src="images/profile.jpg" alt="Mohammad Othman" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="avatar-fallback" style="display:none; flex-direction:column; align-items:center; justify-content:flex-end; width:100%; height:100%;">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="80" r="45" fill="#52B788"/>
+                <ellipse cx="100" cy="175" rx="65" ry="40" fill="#52B788"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label" data-key="about.label">// om mig</div>
+      <h2 data-key="about.title">Vem är Mohammad?</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-key="about.p1">Motiverad civilingenjörsstudent i spelteknik på BTH med ett brinnande intresse för grafikteknik, programmering och att lösa komplexa problem. Jag trivs med att kombinera teknisk noggrannhet med kreativt tänkande.</p>
+          <p data-key="about.p2">Utöver studierna har jag bred arbetslivserfarenhet – från ledarskap på McDonald's till teknisk support på Tele2 – vilket givit mig starka kommunikations- och teamworkfärdigheter.</p>
+          <div class="about-langs">
+            <span class="lang-tag" data-key="about.langSwedish">🇸🇪 Svenska</span>
+            <span class="lang-tag" data-key="about.langEnglish">🇬🇧 Engelska</span>
+            <span class="lang-tag" data-key="about.langArabic">🇸🇦 Arabiska</span>
+            <span class="lang-tag" data-key="about.langKurdish">🏔️ Kurdiska</span>
+          </div>
+        </div>
+        <div class="skills-cloud">
+          <div class="skills-title" data-key="about.skillsTitle">Kompetenser</div>
+          <div class="tags-wrap" id="skills-tags"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="alt-bg">
+    <div class="container">
+      <div class="section-label" data-key="edu.label">// utbildning</div>
+      <h2 data-key="edu.title">Akademisk bakgrund</h2>
+      <div class="timeline" id="education-list"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label" data-key="exp.label">// erfarenhet</div>
+      <h2 data-key="exp.title">Arbetslivserfarenhet</h2>
+      <div class="exp-grid" id="experience-list"></div>
+    </div>
+  </section>
+  
+  
+  <!-- PROJECTS -->
+  <section id="projects" class="alt-bg">
+    <div class="container">
+      <div class="section-label" data-key="proj.label">// projekt</div>
+      <h2 data-key="proj.title">Vad jag byggt</h2>
+      <div class="projects-grid" id="projects-list"></div>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section id="courses">
+  <div class="container">
+    <div class="section-label" data-key="courses.label">// kurser & certifikat</div>
+    <h2 data-key="courses.title">Fortbildning</h2>
+    <div class="courses-grid" id="courses-list"></div>
+  </div>
+</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label" data-key="contact.label">// kontakt</div>
+      <h2 data-key="contact.title">Säg hej</h2>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <p data-key="contact.intro">Har du ett projekt, en idé eller vill bara höra av dig? Fyll i formuläret så återkommer jag snart.</p>
+          <div class="contact-links">
+            <a href="https://github.com/Mhmd-othm" target="_blank" rel="noopener" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.232 1.91 1.232 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              github.com/Mhmd-othm
+            </a>
+            <p class="contact-note" data-key="contact.referencesNote">📌 Vid frågor om referenser – fråga bara!</p>
+          </div>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="from_name" data-key="contact.nameLabel">Namn</label>
+            <input type="text" id="from_name" name="from_name" required data-key-placeholder="contact.namePlaceholder" placeholder="Ditt namn" />
+          </div>
+          <div class="form-group">
+            <label for="from_email" data-key="contact.emailLabel">E-post</label>
+            <input type="email" id="from_email" name="from_email" required data-key-placeholder="contact.emailPlaceholder" placeholder="din@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="message" data-key="contact.messageLabel">Meddelande</label>
+            <textarea id="message" name="message" rows="5" required data-key-placeholder="contact.messagePlaceholder" placeholder="Vad vill du säga?"></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" data-key="contact.send">Skicka meddelande</button>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">MO</span>
+      <p data-key="footer.text">© 2026 Mohammad Othman — Byggt med HTML, CSS & JavaScript</p>
+      <div class="footer-links">
+        <a href="https://github.com/Mhmd-othm" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       LIGHTBOX — stor bildvisning
+       ============================================= -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox();">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1);">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1);">&#10095;</button>
+    <img id="lightbox-img" src="" alt="Förstorad bild">
+    <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+    <div class="lightbox-hint" data-key="proj.lightboxHint">⬅️ ➡️ Använd piltangenterna</div>
+  </div>
+    <!-- =============================================
+       WOTM LIGHTBOX — Månadens medarbetare
+       ============================================= -->
+<div id="wotm-lightbox" class="lightbox" onclick="closeWOTM()">
+  <button class="lightbox-close" onclick="event.stopPropagation(); closeWOTM();">&times;</button>
+  <img id="wotm-lightbox-img" src="" alt="Månadens medarbetare" />
+  <div class="lightbox-hint">🖱️ Klicka utanför bilden eller tryck ESC för att stänga</div>
+</div>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>
