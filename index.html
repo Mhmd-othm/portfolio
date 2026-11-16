@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=2.2" />
 </head>
 <body>
 
@@ -107,7 +107,6 @@
     </div>
   </section>
   
-  
   <!-- PROJECTS -->
   <section id="projects" class="alt-bg">
     <div class="container">
@@ -117,14 +116,15 @@
     </div>
   </section>
 
-  <!-- Courses -->
+  <!-- COURSES -->
   <section id="courses">
-  <div class="container">
-    <div class="section-label" data-key="courses.label">// kurser & certifikat</div>
-    <h2 data-key="courses.title">Fortbildning</h2>
-    <div class="courses-grid" id="courses-list"></div>
-  </div>
-</section>
+    <div class="container">
+      <div class="section-label" data-key="courses.label">// kurser & certifikat</div>
+      <h2 data-key="courses.title">Fortbildning</h2>
+      <div class="courses-grid" id="courses-list"></div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -134,6 +134,10 @@
         <div class="contact-info">
           <p data-key="contact.intro">Har du ett projekt, en idé eller vill bara höra av dig? Fyll i formuläret så återkommer jag snart.</p>
           <div class="contact-links">
+            <a href="https://www.linkedin.com/in/mohammad-othman-34795a218/" target="_blank" rel="noopener" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z"/></svg>
+              linkedin.com/in/mohammad-othman
+            </a>
             <a href="https://github.com/Mhmd-othm" target="_blank" rel="noopener" class="contact-link">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.232 1.91 1.232 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
               github.com/Mhmd-othm
@@ -168,33 +172,171 @@
       <p data-key="footer.text">© 2026 Mohammad Othman — Byggt med HTML, CSS & JavaScript</p>
       <div class="footer-links">
         <a href="https://github.com/Mhmd-othm" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mohammad-othman-34795a218/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <!-- =============================================
-       LIGHTBOX — stor bildvisning
+       LIGHTBOX — stor bild- och videovisning
        ============================================= -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox();">&times;</button>
     <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); navigateLightbox(-1);">&#10094;</button>
     <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); navigateLightbox(1);">&#10095;</button>
-    <img id="lightbox-img" src="" alt="Förstorad bild">
+    <img id="lightbox-img" src="" alt="Förstorad bild" onclick="event.stopPropagation();">
+    <div id="lightbox-video-container" style="display:none; width: 90%; max-width: 960px; aspect-ratio: 16/9; z-index: 10;" onclick="event.stopPropagation();">
+      <iframe id="lightbox-video" width="100%" height="100%" src="" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border-radius: 8px; box-shadow: 0 8px 48px rgba(0,0,0,0.6);"></iframe>
+      <div style="text-align: center; margin-top: 14px;">
+        <a id="lightbox-yt-btn" href="#" target="_blank" rel="noopener" class="btn-primary" style="background:#e03131; font-size:0.95rem; padding: 10px 22px; display:inline-flex; align-items:center; gap:8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span data-key="proj.openInYoutube">Öppna på YouTube</span>
+        </a>
+        <p id="lightbox-file-notice" style="display:none; color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-top: 8px; font-family: var(--ff-code);">⚠️ YouTube blockerar videospelaren när sidan öppnas som lokal fil (file://). Klicka på knappen ovan eller kör starta_hemsida.bat.</p>
+      </div>
+    </div>
     <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
     <div class="lightbox-hint" data-key="proj.lightboxHint">⬅️ ➡️ Använd piltangenterna</div>
   </div>
-    <!-- =============================================
+
+  <!-- =============================================
        WOTM LIGHTBOX — Månadens medarbetare
        ============================================= -->
-<div id="wotm-lightbox" class="lightbox" onclick="closeWOTM()">
-  <button class="lightbox-close" onclick="event.stopPropagation(); closeWOTM();">&times;</button>
-  <img id="wotm-lightbox-img" src="" alt="Månadens medarbetare" />
-  <div class="lightbox-hint">🖱️ Klicka utanför bilden eller tryck ESC för att stänga</div>
-</div>
+  <div id="wotm-lightbox" class="lightbox" onclick="closeWOTM()">
+    <button class="lightbox-close" onclick="event.stopPropagation(); closeWOTM();">&times;</button>
+    <img id="wotm-lightbox-img" src="" alt="Månadens medarbetare" />
+    <div class="lightbox-hint">🖱️ Klicka utanför bilden eller tryck ESC för att stänga</div>
+  </div>
+
+  <!-- =============================================
+       PROJECT DETAILS MODAL — Blood Princess
+       ============================================= -->
+  <div id="project-modal" class="project-modal" onclick="closeProjectModal()">
+    <div class="project-modal-dialog" onclick="event.stopPropagation()">
+      <button class="project-modal-close" onclick="closeProjectModal()" aria-label="Stäng">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-eyebrow" data-key="modal.bloodPrincess.eyebrow">Megaflop Studios · BTH (DV1694)</div>
+        <h2 class="modal-title" data-key="modal.bloodPrincess.title">Blood Princess</h2>
+        <p class="modal-tagline" data-key="modal.bloodPrincess.tagline">Snabbt närstridsspel i förstaperson med pareringar, dashing och blodstänk – byggt i en egenutvecklad C++/DirectX 11-motor.</p>
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://reflexentertainment.itch.io/blood-princess" target="_blank" rel="noopener" class="btn-primary project-link-itch" data-key="modal.bloodPrincess.playItch">
+          🎮 Spela på Itch.io
+        </a>
+        <a href="https://github.com/Winroth13/Blood-Princess" target="_blank" rel="noopener" class="btn-outline" data-key="modal.bloodPrincess.viewGithub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 4px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.232 1.91 1.232 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Se kod på GitHub
+        </a>
+      </div>
+
+      <!-- VIDEOS -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>🎬</span> <span data-key="modal.bloodPrincess.videosTitle">Projektvideor & Speldemo</span>
+        </h3>
+        <div class="modal-videos-grid">
+          <div class="modal-video-card">
+            <h4 data-key="modal.bloodPrincess.video1Title">Gameplay Trailer</h4>
+            <div class="video-responsive-wrap">
+              <iframe id="modal-video-1" src="https://www.youtube.com/embed/kO2K_o1HW5k" title="Blood Princess Trailer" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/watch?v=kO2K_o1HW5k" target="_blank" rel="noopener" class="yt-direct-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span data-key="proj.openInYoutube">Öppna på YouTube</span>
+            </a>
+          </div>
+          <div class="modal-video-card">
+            <h4 data-key="modal.bloodPrincess.video2Title">Speldemo & Arenastrider</h4>
+            <div class="video-responsive-wrap">
+              <iframe id="modal-video-2" src="https://www.youtube.com/embed/652-3XnLyUo" title="Blood Princess Gameplay" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/watch?v=652-3XnLyUo" target="_blank" rel="noopener" class="yt-direct-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span data-key="proj.openInYoutube">Öppna på YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREENSHOTS GALLERY -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>🖼️</span> <span data-key="modal.bloodPrincess.galleryTitle">Skärmdumpar från spelet</span>
+        </h3>
+        <div class="modal-gallery-grid">
+          <div class="modal-gallery-item" onclick="openGalleryImage(0)">
+            <img src="Projects/bloodPrincess/bloodPrincess4.png" alt="Intro – Britt-Marie kidnappas" loading="lazy">
+            <span class="gallery-caption" data-key="modal.bloodPrincess.caption4">Story: Katten Britt-Marie kidnappas av trollkarlen</span>
+          </div>
+          <div class="modal-gallery-item" onclick="openGalleryImage(1)">
+            <img src="Projects/bloodPrincess/bloodPrincess3.png" alt="Pareringsmekanik" loading="lazy">
+            <span class="gallery-caption" data-key="modal.bloodPrincess.caption3">Pareringsmekanik & gyllene träffeffekt</span>
+          </div>
+          <div class="modal-gallery-item" onclick="openGalleryImage(2)">
+            <img src="Projects/bloodPrincess/bloodPrincess1.png" alt="Arenastrid och blodprojektion" loading="lazy">
+            <span class="gallery-caption" data-key="modal.bloodPrincess.caption1">Arenastrid mot goblins & blodprojektion</span>
+          </div>
+          <div class="modal-gallery-item" onclick="openGalleryImage(3)">
+            <img src="Projects/bloodPrincess/bloodPrincess2.png" alt="Goblins i arenan" loading="lazy">
+            <span class="gallery-caption" data-key="modal.bloodPrincess.caption2">Goblin-fiender i attackformation</span>
+          </div>
+          <div class="modal-gallery-item" onclick="openGalleryImage(4)">
+            <img src="Projects/bloodPrincess/bloodPrincess5.png" alt="Skelettstrid med svärd" loading="lazy">
+            <span class="gallery-caption" data-key="modal.bloodPrincess.caption5">Skelettfiender & svärdsstrider</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT / STORY -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>⚔️</span> <span data-key="modal.bloodPrincess.aboutTitle">Om spelet & Story</span>
+        </h3>
+        <p data-key="modal.bloodPrincess.aboutP1">Blood Princess är ett högintensivt närstridsspel i förstaperson utvecklat av Megaflop Studios (sex civilingenjörsstudenter i spelteknik på Blekinge Tekniska Högskola) i kursen DV1694 Litet spelprojekt.</p>
+        <p data-key="modal.bloodPrincess.aboutP2">Spelaren antar rollen som en prinsessa som kämpar genom dödliga arenor för att rädda sin kidnappade katt Britt-Marie från vågor av goblins och skelettmonster. Spelet är inspirerat av Warhammer 40,000: Darktide och bygger på pareringar, snabba dashes, svärdsattacker och dynamiskt blodstänk.</p>
+      </div>
+
+      <!-- CUSTOM ENGINE -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>⚙️</span> <span data-key="modal.bloodPrincess.engineTitle">Egenutvecklad Spelmotor (C++ & DirectX 11)</span>
+        </h3>
+        <p data-key="modal.bloodPrincess.engineP1">I stället för att använda färdiga motorer som Unity eller Unreal byggde teamet en hel spelmotor från grunden. Motorn har en modulär komponentbaserad arkitektur (ECS) som gjorde det möjligt att utveckla grafik, stridsmekanik och ljud parallellt.</p>
+        <ul class="features-list">
+          <li><span class="bullet">✦</span> <span data-key="modal.bloodPrincess.f1">Deferred Rendering med PBR-ljus (Physically Based Rendering)</span></li>
+          <li><span class="bullet">✦</span> <span data-key="modal.bloodPrincess.f2">Dynamiska skuggor, partikelsystem och blodprojektion på golv och ytor</span></li>
+          <li><span class="bullet">✦</span> <span data-key="modal.bloodPrincess.f3">3D-ljud via XAudio2 och vektormatematik via DirectXMath</span></li>
+          <li><span class="bullet">✦</span> <span data-key="modal.bloodPrincess.f4">glTF 2.0-modelläsning och skelettanimationer via tinygltf</span></li>
+          <li><span class="bullet">✦</span> <span data-key="modal.bloodPrincess.f5">Fönster- och inputhantering med SDL, debuggränssnitt med Dear ImGui</span></li>
+        </ul>
+      </div>
+
+      <!-- SCRUM -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>📊</span> <span data-key="modal.bloodPrincess.scrumTitle">Agilt arbetssätt & BTH Gameport</span>
+        </h3>
+        <p data-key="modal.bloodPrincess.scrumP1">Projektet drevs enligt Scrum i tvåveckorssprintar med morgonmöten, backlog i GitHub Projects och timestimering. Under BTH Gameport ställdes spelet ut för allmänheten där 88 % internt och 67 % av externa testare gav toppbetyg till spelets intensitet och stridskänsla.</p>
+      </div>
+
+      <!-- TEAM & COLLEAGUES -->
+      <div class="modal-section">
+        <h3 class="modal-section-title">
+          <span>👥</span> <span data-key="modal.bloodPrincess.teamTitle">Team & Kollegor</span>
+        </h3>
+        <p data-key="modal.bloodPrincess.teamIntro">Spelet utvecklades av sex studenter på civilingenjörsprogrammet i spelteknik vid BTH (klicka för GitHub):</p>
+        <div class="team-grid" id="modal-team-list"></div>
+      </div>
+      
+    </div>
+  </div>
+
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="js/translations.js"></script>
-  <script src="js/language.js"></script>
+  <script src="js/translations.js?v=2.2"></script>
+  <script src="js/language.js?v=2.2"></script>
   <script src="js/contact.js"></script>
 
 </body>
